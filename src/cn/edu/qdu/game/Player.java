@@ -2,30 +2,33 @@ package cn.edu.qdu.game;
 
 import java.util.Scanner;
 
-public class  Player {
+public  abstract class Player {
 	private String playName;
 	private int winningTimes;
 	Scanner input=new Scanner(System.in);
-	public void  inputName(){
-		playName=input.next();
+	public abstract void  inputName();{
+		String playName=input.next();
 	}
-
-	public int myFist(int number){
-		number=input.nextInt();
-	    return number;	
+	public Player(){
+		setWinningTimes(0);
 	}
-	public String getPerson() {
+	
+	public abstract int myFist();
+	
+	public String getPlayName() {
 		return playName;
 	}
-	public void setPerson(String person) {
-		this.playName = person;
+	
+	public void setPlayName(String playName) {
+		this.playName = playName;
 	}
+	
 	public int getWinningTimes() {
 		return winningTimes;
 	}
+	
 	public void setWinningTimes(int winningTimes) {
 		this.winningTimes = winningTimes;
 	}
 	
-
 }
